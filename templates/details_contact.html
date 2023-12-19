@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+
+    {% block title %} 
+        {{ contact.name }}
+    {% endblock title %}    
+    </title>
+</head>
+<body>
+    {% block content %}
+        <p>Name: {{ contact.name }}</p>
+        <h2>Phone Numbers:</h2>
+        <ul>
+            {% for phone_number in contact.phonenumber_set.all %}
+                <li>{{ phone_number.number }}</li>
+            {% endfor %}
+        </ul>
+    
+    {% endblock content %}
+</body>
+</html>
